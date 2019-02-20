@@ -11,18 +11,18 @@ public class MovementGG : MonoBehaviour {
 	}
 	
 	void Update () {
-		if (Input.GetMouseButtonDown(0))
+		if (Input.GetTouch(0).phase == TouchPhase.Began)
         {
-			startMouseX = Input.mousePosition[0]/(Screen.height);
-			startMouseY = Input.mousePosition[1]/(Screen.height);
+			startMouseX = Input.GetTouch(0).position[0]/(Screen.height);
+			startMouseY = Input.GetTouch(0).position[1]/(Screen.height);
 			startGGX = gameObject.transform.position[0];
 			startGGY = gameObject.transform.position[2];
 		}
 		
-		if (Input.GetMouseButton(0))
+		if (Input.GetTouch(0).phase == TouchPhase.Moved)
 		{
-			deltaX = Input.mousePosition[0]/(Screen.height) - startMouseX;
-			deltaY = Input.mousePosition[1]/(Screen.height) - startMouseY;
+			deltaX = Input.GetTouch(0).position[0]/(Screen.height) - startMouseX;
+			deltaY = Input.GetTouch(0).position[1]/(Screen.height) - startMouseY;
 			newPosX = startGGX + deltaX * Speed;
 			newPosY = startGGY + deltaY * Speed;
 
@@ -34,6 +34,14 @@ public class MovementGG : MonoBehaviour {
 				(Force * (new Vector3(newPosX, 1, newPosY) - transform.position).magnitude) ,
 				ForceMode.VelocityChange);		
 		}
+
+        if (Input.GetTouch(0).phase == TouchPhase.Ended && Input.touchCount > 0)
+        {
+            startMouseX = Input.GetTouch(1).position[0] / (Screen.height);
+            startMouseY = Input.GetTouch(1).position[1] / (Screen.height);
+            startGGX = gameObject.transform.position[0];
+            startGGY = gameObject.transform.position[2];
+        }
 	}
 
 	void FixedUpdate () {
