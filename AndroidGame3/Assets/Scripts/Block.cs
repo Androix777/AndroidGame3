@@ -13,7 +13,7 @@ public class Block : MonoBehaviour {
 	void Update () {
 		if (transform.position.y < 0)
         {
-            GeneratorBlock.Score++;
+            GameController.Score++;
             Destroy(gameObject, 0);
         }
 
@@ -23,7 +23,7 @@ public class Block : MonoBehaviour {
     {
         if (collision.transform.tag == "ExitArea")
         {
-            GeneratorBlock.Score++;
+            GameController.Score++;
             Destroy(gameObject, 0);
         }
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class MovementGG : MonoBehaviour {
-
+    public bool stopGame = false;
 	public float Force = 5, Speed = 10;
 	float startMouseX = 0, startMouseY = 0, startGGX = 0, startGGY = 0, deltaX = 0, deltaY = 0, newPosX = 0, newPosY = 0;
 	void Start () {
@@ -22,7 +22,7 @@ public class MovementGG : MonoBehaviour {
     void Update () {
 
 
-        if (Input.touchCount > 0)
+        if (Input.touchCount > 0 && !stopGame)
         {
 
 		    if (Input.GetTouch(0).phase == TouchPhase.Began)
