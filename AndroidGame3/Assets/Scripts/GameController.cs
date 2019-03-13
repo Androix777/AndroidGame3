@@ -50,6 +50,8 @@ public class GameController : MonoBehaviour
         {
             Room = Instantiate(Resources.Load(path), Vector3.zero, Quaternion.Euler(Vector3.zero)) as GameObject;
             Hero.transform.position = Room.GetComponent<Room>().StartPos();
+            Hero.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            Hero.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
             return true;
         }
         else return false;
@@ -74,6 +76,7 @@ public class GameController : MonoBehaviour
         end = true;
         menu.SetActive(true);
         Hero.GetComponent<MovementGG>().stopGame = true;
+
     }
 
     public void EndTime()

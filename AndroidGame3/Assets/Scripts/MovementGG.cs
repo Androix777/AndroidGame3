@@ -18,6 +18,7 @@ public class MovementGG : MonoBehaviour {
             gameMaster.DeadHero();
             transform.position = new Vector3(1000, 1000, 1000);
         }
+
     }
 
     void Update () {
