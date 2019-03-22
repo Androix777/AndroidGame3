@@ -333,7 +333,7 @@ PrefabInstance:
     - target: {fileID: 4055370253859814456, guid: aac5f3dd8aedaad4ca7e529e891b28b8,
         type: 3}
       propertyPath: typeBlock
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 139724705631826820, guid: aac5f3dd8aedaad4ca7e529e891b28b8,
         type: 3}

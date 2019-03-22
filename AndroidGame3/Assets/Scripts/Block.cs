@@ -4,12 +4,41 @@ using UnityEngine;
 
 public class Block : MonoBehaviour {
 
-    public enum BlockType {white,red };
+    public enum BlockType {white,red,black};
     public BlockType typeBlock = BlockType.red;
     public Material[] materials;
 	// Use this for initialization
 	void Start () {
-		if (typeBlock == BlockType.red)
+        SelectColor();
+    }
+	
+	// Update is called once per frame
+	void Update () {
+        
+
+		if (transform.position.y < 0)
+        {          
+            Destroy(gameObject, 0);
+        }
+
+
+	}
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform.tag == "ExitArea" )
+        {
+            
+            Destroy(gameObject, 0);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        GameController.Score++;
+    }
+    public void SelectColor()
+    {
+        if (typeBlock == BlockType.red)
         {
             gameObject.tag = "RedBlock";
             gameObject.GetComponent<MeshRenderer>().material = materials[1];
@@ -20,26 +49,10 @@ public class Block : MonoBehaviour {
             gameObject.tag = "WhiteBlock";
             gameObject.GetComponent<MeshRenderer>().material = materials[0];
         }
-    }
-	
-	// Update is called once per frame
-	void Update () {
-        
-
-		if (transform.position.y < 0)
+        else if (typeBlock == BlockType.black)
         {
-            GameController.Score++;
-            Destroy(gameObject, 0);
-        }
-
-
-	}
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.transform.tag == "ExitArea" && typeBlock == BlockType.white)
-        {
-            GameController.Score++;
-            Destroy(gameObject, 0);
+            gameObject.tag = "BlackBlock";
+            gameObject.GetComponent<MeshRenderer>().material = materials[2];
         }
     }
 }
