@@ -97,6 +97,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pillar
       objectReference: {fileID: 0}
+    - target: {fileID: 6225343169666600678, guid: a87e6e1f97ab50349bbfdb7cea88b249,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6627789699393994571, guid: a87e6e1f97ab50349bbfdb7cea88b249,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -392,6 +397,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pillar (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6225343169666600678, guid: a87e6e1f97ab50349bbfdb7cea88b249,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6627789699393994571, guid: a87e6e1f97ab50349bbfdb7cea88b249,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -476,6 +486,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pillar (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225343169666600678, guid: a87e6e1f97ab50349bbfdb7cea88b249,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6627789699393994571, guid: a87e6e1f97ab50349bbfdb7cea88b249,
         type: 3}
@@ -981,6 +996,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pillar (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225343169666600678, guid: a87e6e1f97ab50349bbfdb7cea88b249,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6627789699393994571, guid: a87e6e1f97ab50349bbfdb7cea88b249,
         type: 3}
