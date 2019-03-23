@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Block : MonoBehaviour {
-
+    public GameObject Particle;
     public enum BlockType {white,red,black};
     public BlockType typeBlock = BlockType.red;
     public Material[] materials;
@@ -27,14 +27,18 @@ public class Block : MonoBehaviour {
     {
         if (collision.transform.tag == "ExitArea" )
         {
-            
+            GameObject part = Instantiate(Particle, transform.position, transform.rotation) as GameObject;
+            part.GetComponent<ParticleSystemRenderer>().material = materials[(int)typeBlock];
+            GameController.Score++;
             Destroy(gameObject, 0);
         }
     }
 
     private void OnDestroy()
     {
-        GameController.Score++;
+        
+
+        
     }
     public void SelectColor()
     {
