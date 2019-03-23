@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\Block.cs" />
     <Compile Include="Assets\Scripts\Explosion.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
+    <Compile Include="Assets\Scripts\Jump.cs" />
     <Compile Include="Assets\Scripts\MovementGG.cs" />
     <Compile Include="Assets\Scripts\Room.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
