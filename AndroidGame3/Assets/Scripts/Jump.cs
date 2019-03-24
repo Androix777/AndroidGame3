@@ -18,14 +18,31 @@ public class Jump : MonoBehaviour
         
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log(collision.transform.tag);
+        if (collision.transform.tag == "Ground")
+        {
+            if (timer > 0) { timer--; }
+            else
+            {
+                timer = time;
+                gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * force);
+            }
+        }
+    }
+
     private void OnCollisionStay(Collision collision)
     {
+        Debug.Log(collision.transform.tag);
         if (collision.transform.tag == "Ground")
-        if (timer > 0) timer--;
-        else
         {
-            timer = time;
-            gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up*force);
+            if (timer > 0) { timer--; }
+            else
+            {
+                timer = time;
+                gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * force);
+            }
         }
     }
 }
