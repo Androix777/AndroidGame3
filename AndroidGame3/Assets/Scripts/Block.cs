@@ -29,6 +29,7 @@ public class Block : MonoBehaviour {
         {
             GameObject part = Instantiate(Particle, transform.position, transform.rotation) as GameObject;
             part.GetComponent<ParticleSystemRenderer>().material = materials[(int)typeBlock];
+            part.transform.SetParent(GameObject.FindGameObjectWithTag("Room").transform);
             GameController.Score++;
             Destroy(gameObject, 0);
         }

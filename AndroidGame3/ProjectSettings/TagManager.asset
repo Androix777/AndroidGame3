@@ -9,6 +9,7 @@ TagManager:
   - ExitArea
   - BlackBlock
   - Ground
+  - Room
   layers:
   - Default
   - TransparentFX
