@@ -32,6 +32,8 @@ public class Jump : MonoBehaviour
         }
     }
 
+    
+
     private void OnCollisionStay(Collision collision)
     {
         Debug.Log(collision.transform.tag);
