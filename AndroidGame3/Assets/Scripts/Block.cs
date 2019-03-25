@@ -27,7 +27,7 @@ public class Block : MonoBehaviour {
     {
         if (collision.transform.tag == "ExitArea" )
         {
-            GameObject part = Instantiate(Particle, transform.position, transform.rotation) as GameObject;
+            GameObject part = Instantiate(Particle, transform.position, Quaternion.Euler(-90,0,0)) as GameObject;
             part.GetComponent<ParticleSystemRenderer>().material = materials[(int)typeBlock];
             part.transform.SetParent(GameObject.FindGameObjectWithTag("Room").transform);
             GameController.Score++;
