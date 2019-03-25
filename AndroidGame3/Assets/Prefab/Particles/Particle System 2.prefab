@@ -285,7 +285,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.3
+      scalar: 0.4
       minScalar: 0.2
       maxCurve:
         serializedVersion: 2
@@ -661,7 +661,7 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 20
+    angle: 30
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -4773,10 +4773,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3184981755783937868}
     m_Modifications:
-    - target: {fileID: 1612221337289516, guid: 135c19b761505974abbf4c38e8d25418, type: 3}
-      propertyPath: m_Name
-      value: Sparks
-      objectReference: {fileID: 0}
     - target: {fileID: 4637813376089536, guid: 135c19b761505974abbf4c38e8d25418, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4821,6 +4817,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1612221337289516, guid: 135c19b761505974abbf4c38e8d25418, type: 3}
+      propertyPath: m_Name
+      value: Sparks
+      objectReference: {fileID: 0}
     - target: {fileID: 198437972640931972, guid: 135c19b761505974abbf4c38e8d25418,
         type: 3}
       propertyPath: simulationSpeed
@@ -4850,6 +4850,11 @@ PrefabInstance:
         type: 3}
       propertyPath: ShapeModule.radiusThickness
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198437972640931972, guid: 135c19b761505974abbf4c38e8d25418,
+        type: 3}
+      propertyPath: looping
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 135c19b761505974abbf4c38e8d25418, type: 3}
