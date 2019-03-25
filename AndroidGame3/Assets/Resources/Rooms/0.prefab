@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   block: 56
-  time: 750
+  time: 650
   startPos: {fileID: 2502057191152310377}
 --- !u!1001 &4551364147304122011
 PrefabInstance:

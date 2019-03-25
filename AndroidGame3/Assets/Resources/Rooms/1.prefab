@@ -76,7 +76,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   block: 200
-  time: 750
+  time: 700
   startPos: {fileID: 2502057191152310377}
 --- !u!1001 &7344991901552976913
 PrefabInstance:
@@ -85,11 +85,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1111838505065136016}
     m_Modifications:
-    - target: {fileID: 401170695773704485, guid: aac5f3dd8aedaad4ca7e529e891b28b8,
-        type: 3}
-      propertyPath: m_Name
-      value: Forest
-      objectReference: {fileID: 0}
     - target: {fileID: 7169658526526143040, guid: aac5f3dd8aedaad4ca7e529e891b28b8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -144,6 +139,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 401170695773704485, guid: aac5f3dd8aedaad4ca7e529e891b28b8,
+        type: 3}
+      propertyPath: m_Name
+      value: Forest
       objectReference: {fileID: 0}
     - target: {fileID: 7150577500656863050, guid: aac5f3dd8aedaad4ca7e529e891b28b8,
         type: 3}

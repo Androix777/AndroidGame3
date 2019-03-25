@@ -1228,8 +1228,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ec69013b2b75f84db06909a469634f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  block: 140
-  time: 850
+  block: 61
+  time: 450
   startPos: {fileID: 2502057191152310377}
 --- !u!138 &5629069269044520921
 FixedJoint:
