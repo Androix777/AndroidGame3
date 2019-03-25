@@ -8,8 +8,8 @@ FixedJoint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1037325055884508691}
   m_ConnectedBody: {fileID: 6365977439439545726}
-  m_BreakForce: 0.1
-  m_BreakTorque: 0.1
+  m_BreakForce: 0.15
+  m_BreakTorque: 0.15
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
   m_MassScale: 1
@@ -22,8 +22,8 @@ FixedJoint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1294694631025007061}
   m_ConnectedBody: {fileID: 6365977439439545726}
-  m_BreakForce: 0.1
-  m_BreakTorque: 0.1
+  m_BreakForce: 0.15
+  m_BreakTorque: 0.15
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
   m_MassScale: 1
@@ -36,8 +36,8 @@ FixedJoint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1333235767646912695}
   m_ConnectedBody: {fileID: 6365977439439545726}
-  m_BreakForce: 0.1
-  m_BreakTorque: 0.1
+  m_BreakForce: 0.15
+  m_BreakTorque: 0.15
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
   m_MassScale: 1
@@ -50,8 +50,8 @@ FixedJoint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1741075537702616189}
   m_ConnectedBody: {fileID: 6365977439439545726}
-  m_BreakForce: 0.1
-  m_BreakTorque: 0.1
+  m_BreakForce: 0.15
+  m_BreakTorque: 0.15
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
   m_MassScale: 1
@@ -94,8 +94,8 @@ FixedJoint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2057353405406974860}
   m_ConnectedBody: {fileID: 6365977439439545726}
-  m_BreakForce: 0.1
-  m_BreakTorque: 0.1
+  m_BreakForce: 0.15
+  m_BreakTorque: 0.15
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
   m_MassScale: 1
@@ -108,8 +108,8 @@ FixedJoint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2699658091745134797}
   m_ConnectedBody: {fileID: 6365977439439545726}
-  m_BreakForce: 0.1
-  m_BreakTorque: 0.1
+  m_BreakForce: 0.15
+  m_BreakTorque: 0.15
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
   m_MassScale: 1
@@ -122,8 +122,8 @@ FixedJoint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2920639122982791800}
   m_ConnectedBody: {fileID: 6365977439439545726}
-  m_BreakForce: 0.1
-  m_BreakTorque: 0.1
+  m_BreakForce: 0.15
+  m_BreakTorque: 0.15
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
   m_MassScale: 1
@@ -136,8 +136,8 @@ FixedJoint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3238198087235426594}
   m_ConnectedBody: {fileID: 6365977439439545726}
-  m_BreakForce: 0.1
-  m_BreakTorque: 0.1
+  m_BreakForce: 0.15
+  m_BreakTorque: 0.15
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
   m_MassScale: 1
@@ -150,8 +150,8 @@ FixedJoint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3646887131311811918}
   m_ConnectedBody: {fileID: 6365977439439545726}
-  m_BreakForce: 0.1
-  m_BreakTorque: 0.1
+  m_BreakForce: 0.15
+  m_BreakTorque: 0.15
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
   m_MassScale: 1
@@ -164,8 +164,8 @@ FixedJoint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3999215391673819958}
   m_ConnectedBody: {fileID: 6365977439439545726}
-  m_BreakForce: 0.1
-  m_BreakTorque: 0.1
+  m_BreakForce: 0.15
+  m_BreakTorque: 0.15
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
   m_MassScale: 1
@@ -178,8 +178,8 @@ FixedJoint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5309386055250052137}
   m_ConnectedBody: {fileID: 6365977439439545726}
-  m_BreakForce: 0.1
-  m_BreakTorque: 0.1
+  m_BreakForce: 0.15
+  m_BreakTorque: 0.15
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
   m_MassScale: 1
@@ -192,8 +192,8 @@ FixedJoint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5620194437959425335}
   m_ConnectedBody: {fileID: 6365977439439545726}
-  m_BreakForce: 0.1
-  m_BreakTorque: 0.1
+  m_BreakForce: 0.15
+  m_BreakTorque: 0.15
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
   m_MassScale: 1
@@ -206,8 +206,8 @@ FixedJoint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5628235943449538534}
   m_ConnectedBody: {fileID: 6365977439439545726}
-  m_BreakForce: 0.1
-  m_BreakTorque: 0.1
+  m_BreakForce: 0.15
+  m_BreakTorque: 0.15
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
   m_MassScale: 1
@@ -220,8 +220,8 @@ FixedJoint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5655001445568767691}
   m_ConnectedBody: {fileID: 6365977439439545726}
-  m_BreakForce: 0.1
-  m_BreakTorque: 0.1
+  m_BreakForce: 0.15
+  m_BreakTorque: 0.15
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
   m_MassScale: 1
@@ -234,8 +234,8 @@ FixedJoint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6621533077469294172}
   m_ConnectedBody: {fileID: 6365977439439545726}
-  m_BreakForce: 0.1
-  m_BreakTorque: 0.1
+  m_BreakForce: 0.15
+  m_BreakTorque: 0.15
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
   m_MassScale: 1
@@ -248,8 +248,8 @@ FixedJoint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7194207591718685960}
   m_ConnectedBody: {fileID: 6365977439439545726}
-  m_BreakForce: 0.1
-  m_BreakTorque: 0.1
+  m_BreakForce: 0.15
+  m_BreakTorque: 0.15
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
   m_MassScale: 1
@@ -262,8 +262,8 @@ FixedJoint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7498597024404426978}
   m_ConnectedBody: {fileID: 6365977439439545726}
-  m_BreakForce: 0.1
-  m_BreakTorque: 0.1
+  m_BreakForce: 0.15
+  m_BreakTorque: 0.15
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
   m_MassScale: 1
@@ -276,8 +276,8 @@ FixedJoint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7634041039868808814}
   m_ConnectedBody: {fileID: 6365977439439545726}
-  m_BreakForce: 0.1
-  m_BreakTorque: 0.1
+  m_BreakForce: 0.15
+  m_BreakTorque: 0.15
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
   m_MassScale: 1
@@ -290,8 +290,8 @@ FixedJoint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7652116889750503378}
   m_ConnectedBody: {fileID: 6365977439439545726}
-  m_BreakForce: 0.1
-  m_BreakTorque: 0.1
+  m_BreakForce: 0.15
+  m_BreakTorque: 0.15
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
   m_MassScale: 1
@@ -304,8 +304,8 @@ FixedJoint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7787437794871743155}
   m_ConnectedBody: {fileID: 6365977439439545726}
-  m_BreakForce: 0.1
-  m_BreakTorque: 0.1
+  m_BreakForce: 0.15
+  m_BreakTorque: 0.15
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
   m_MassScale: 1
@@ -318,8 +318,8 @@ FixedJoint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8574496283808670480}
   m_ConnectedBody: {fileID: 6365977439439545726}
-  m_BreakForce: 0.1
-  m_BreakTorque: 0.1
+  m_BreakForce: 0.15
+  m_BreakTorque: 0.15
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
   m_MassScale: 1
@@ -407,8 +407,8 @@ FixedJoint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9187895597818161227}
   m_ConnectedBody: {fileID: 6365977439439545726}
-  m_BreakForce: 0.1
-  m_BreakTorque: 0.1
+  m_BreakForce: 0.15
+  m_BreakTorque: 0.15
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
   m_MassScale: 1
@@ -1032,11 +1032,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1111838505065136016}
     m_Modifications:
-    - target: {fileID: 8795754652995201164, guid: d6b46f133e38c034cb1fe3b6f092b33b,
-        type: 3}
-      propertyPath: m_Name
-      value: Wall (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 347075546992587425, guid: d6b46f133e38c034cb1fe3b6f092b33b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1091,6 +1086,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8795754652995201164, guid: d6b46f133e38c034cb1fe3b6f092b33b,
+        type: 3}
+      propertyPath: m_Name
+      value: Wall (2)
       objectReference: {fileID: 0}
     - target: {fileID: 7935901138599999846, guid: d6b46f133e38c034cb1fe3b6f092b33b,
         type: 3}
@@ -1288,11 +1288,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1111838505065136016}
     m_Modifications:
-    - target: {fileID: 8795754652995201164, guid: d6b46f133e38c034cb1fe3b6f092b33b,
-        type: 3}
-      propertyPath: m_Name
-      value: Wall
-      objectReference: {fileID: 0}
     - target: {fileID: 347075546992587425, guid: d6b46f133e38c034cb1fe3b6f092b33b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1348,6 +1343,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8795754652995201164, guid: d6b46f133e38c034cb1fe3b6f092b33b,
+        type: 3}
+      propertyPath: m_Name
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 7935901138599999846, guid: d6b46f133e38c034cb1fe3b6f092b33b,
         type: 3}
       propertyPath: m_IsActive
@@ -1378,11 +1378,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1111838505065136016}
     m_Modifications:
-    - target: {fileID: 8795754652995201164, guid: d6b46f133e38c034cb1fe3b6f092b33b,
-        type: 3}
-      propertyPath: m_Name
-      value: Wall (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 347075546992587425, guid: d6b46f133e38c034cb1fe3b6f092b33b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1437,6 +1432,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8795754652995201164, guid: d6b46f133e38c034cb1fe3b6f092b33b,
+        type: 3}
+      propertyPath: m_Name
+      value: Wall (3)
       objectReference: {fileID: 0}
     - target: {fileID: 7935901138599999846, guid: d6b46f133e38c034cb1fe3b6f092b33b,
         type: 3}
@@ -2181,11 +2181,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1111838505065136016}
     m_Modifications:
-    - target: {fileID: 8795754652995201164, guid: d6b46f133e38c034cb1fe3b6f092b33b,
-        type: 3}
-      propertyPath: m_Name
-      value: Wall (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 347075546992587425, guid: d6b46f133e38c034cb1fe3b6f092b33b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2240,6 +2235,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8795754652995201164, guid: d6b46f133e38c034cb1fe3b6f092b33b,
+        type: 3}
+      propertyPath: m_Name
+      value: Wall (1)
       objectReference: {fileID: 0}
     - target: {fileID: 7935901138599999846, guid: d6b46f133e38c034cb1fe3b6f092b33b,
         type: 3}
