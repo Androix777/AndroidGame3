@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9a15c5ddf04ab04fa662c28dbaac130, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Particle: {fileID: 4891470385582018799, guid: b4d0a470f6b43d14bbce84b6fcef1978,
+  Particle: {fileID: 4891470385582018799, guid: 2210398084257e941bde8a5c0ebbecdb,
     type: 3}
   typeBlock: 0
   materials:
