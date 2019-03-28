@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5404250534374200489}
   - component: {fileID: 620746504367558766}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: HeroTrailParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,7 +51,7 @@ ParticleSystem:
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
-  useRigidbodyForVelocity: 1
+  useRigidbodyForVelocity: 0
   startDelay:
     serializedVersion: 2
     minMaxState: 0
