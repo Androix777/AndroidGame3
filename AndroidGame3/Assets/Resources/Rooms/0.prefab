@@ -15,6 +15,8 @@ MonoBehaviour:
   range: 4
   force: 3.5
   modifier: 2
+  Particle: {fileID: 2606482656881829886, guid: 2743d3c7276865840855d82a7166e7b1,
+    type: 3}
 --- !u!1 &1853423168594771093
 GameObject:
   m_ObjectHideFlags: 0
@@ -60,6 +62,8 @@ MonoBehaviour:
   range: 4
   force: 3.5
   modifier: 2
+  Particle: {fileID: 2606482656881829886, guid: 2743d3c7276865840855d82a7166e7b1,
+    type: 3}
 --- !u!114 &9206657743791138468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,6 +79,8 @@ MonoBehaviour:
   range: 4
   force: 3.5
   modifier: 2
+  Particle: {fileID: 2606482656881829886, guid: 2743d3c7276865840855d82a7166e7b1,
+    type: 3}
 --- !u!114 &9052137539380725836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90,6 +96,8 @@ MonoBehaviour:
   range: 4
   force: 3.5
   modifier: 2
+  Particle: {fileID: 2606482656881829886, guid: 2743d3c7276865840855d82a7166e7b1,
+    type: 3}
 --- !u!114 &1663242690430305553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,6 +113,8 @@ MonoBehaviour:
   range: 4
   force: 3.5
   modifier: 2
+  Particle: {fileID: 2606482656881829886, guid: 2743d3c7276865840855d82a7166e7b1,
+    type: 3}
 --- !u!114 &6163573721271327396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,6 +130,8 @@ MonoBehaviour:
   range: 4
   force: 3.5
   modifier: 2
+  Particle: {fileID: 2606482656881829886, guid: 2743d3c7276865840855d82a7166e7b1,
+    type: 3}
 --- !u!114 &5681598016003175948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,6 +147,8 @@ MonoBehaviour:
   range: 4
   force: 3.5
   modifier: 2
+  Particle: {fileID: 2606482656881829886, guid: 2743d3c7276865840855d82a7166e7b1,
+    type: 3}
 --- !u!114 &3293258128177277699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,6 +164,8 @@ MonoBehaviour:
   range: 4
   force: 3.5
   modifier: 2
+  Particle: {fileID: 2606482656881829886, guid: 2743d3c7276865840855d82a7166e7b1,
+    type: 3}
 --- !u!1 &8744681485026915993
 GameObject:
   m_ObjectHideFlags: 0

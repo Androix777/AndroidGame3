@@ -5,7 +5,7 @@ using UnityEngine;
 public class Explosion : MonoBehaviour
 {
     public float range,force, modifier;
-
+    public GameObject Particle;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +22,8 @@ public class Explosion : MonoBehaviour
     {
         if (collision.transform.tag == "Player")
         {
+            GameObject part = Instantiate(Particle, transform.position, Quaternion.Euler(-90, 0, 0)) as GameObject;
+            part.transform.SetParent(GameObject.FindGameObjectWithTag("Room").transform);
             explose();
             Destroy(gameObject, 0);
         }

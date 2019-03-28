@@ -390,6 +390,8 @@ MonoBehaviour:
   range: 5
   force: 2
   modifier: 1
+  Particle: {fileID: 2606482656881829886, guid: 2743d3c7276865840855d82a7166e7b1,
+    type: 3}
 --- !u!114 &7430346264289063266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -416,7 +418,7 @@ GameObject:
   - component: {fileID: 1111838505065136016}
   - component: {fileID: 7291678143208771234}
   m_Layer: 0
-  m_Name: 7
+  m_Name: T0
   m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2244,7 +2246,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Particle
       value: 
-      objectReference: {fileID: 4891470385582018799, guid: b4d0a470f6b43d14bbce84b6fcef1978,
+      objectReference: {fileID: 2606482656881829886, guid: 2743d3c7276865840855d82a7166e7b1,
         type: 3}
     - target: {fileID: 4261703089210985134, guid: 31326735046e1864aa4995ec99a8a739,
         type: 3}

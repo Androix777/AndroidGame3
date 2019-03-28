@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class MovementGG : MonoBehaviour {
     public bool stopGame = true;
-	public float Force = 5, Speed = 10;
+    public GameObject ParticleDead;
+    public float Force = 5, Speed = 10;
 	float startMouseX = 0, startMouseY = 0, startGGX = 0, startGGY = 0, deltaX = 0, deltaY = 0, newPosX = 0, newPosY = 0;
     public GameController gameMaster;
 	void Start () {
@@ -15,6 +16,9 @@ public class MovementGG : MonoBehaviour {
     {
         if (collision.transform.tag == "RedBlock")
         {
+            GameObject part = Instantiate(ParticleDead, transform.position, Quaternion.Euler(-90, 0, 0)) as GameObject;
+            //part.GetComponent<ParticleSystemRenderer>().material = materials[(int)typeBlock];
+            part.transform.SetParent(GameObject.FindGameObjectWithTag("Room").transform);
             gameMaster.DeadHero();
             transform.position = new Vector3(1000, 1000, 1000);
         }
