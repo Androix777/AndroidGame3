@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class MovementGG : MonoBehaviour {
     public bool stopGame = true;
     public GameObject ParticleDead;
+    public GameObject ParticleLine;
     public float Force = 5, Speed = 10;
 	float startMouseX = 0, startMouseY = 0, startGGX = 0, startGGY = 0, deltaX = 0, deltaY = 0, newPosX = 0, newPosY = 0;
     public GameController gameMaster;
@@ -20,6 +21,7 @@ public class MovementGG : MonoBehaviour {
             //part.GetComponent<ParticleSystemRenderer>().material = materials[(int)typeBlock];
             part.transform.SetParent(GameObject.FindGameObjectWithTag("Room").transform);
             gameMaster.DeadHero();
+            ParticleLine.SetActive(false);
             transform.position = new Vector3(1000, 1000, 1000);
         }
 
@@ -65,6 +67,15 @@ public class MovementGG : MonoBehaviour {
 	    }
     }
 
+    public void StopGameHero()
+    {
+        stopGame = true;
+    }
+    public void StartGameHero()
+    {
+        ParticleLine.SetActive(true);
+        stopGame = false;
+    }
     void FixedUpdate () {
 		
 	}

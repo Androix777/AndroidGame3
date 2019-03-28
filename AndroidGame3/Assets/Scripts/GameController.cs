@@ -66,7 +66,7 @@ public class GameController : MonoBehaviour
         time = Room.GetComponent<Room>().GetTime();
         block = Room.GetComponent<Room>().GetBlock();
         menu.SetActive(false);
-        Hero.GetComponent<MovementGG>().stopGame = false;
+        Hero.GetComponent<MovementGG>().StartGameHero();
         
     }
 
@@ -75,7 +75,7 @@ public class GameController : MonoBehaviour
         time = 0;
         end = true;
         menu.SetActive(true);
-        Hero.GetComponent<MovementGG>().stopGame = true;
+        Hero.GetComponent<MovementGG>().StopGameHero();
 
     }
 
@@ -99,6 +99,6 @@ public class GameController : MonoBehaviour
         }
         end = true;
         menu.SetActive(true);
-        Hero.GetComponent<MovementGG>().stopGame = true;
+        Hero.GetComponent<MovementGG>().StopGameHero();
     }
 }
