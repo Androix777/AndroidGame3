@@ -7,6 +7,7 @@ public class Block : MonoBehaviour {
     public enum BlockType {white,red,black};
     public BlockType typeBlock = BlockType.red;
     public Material[] materials;
+    public GameObject music;
 	// Use this for initialization
 	void Start () {
         SelectColor();
@@ -30,6 +31,11 @@ public class Block : MonoBehaviour {
             GameObject part = Instantiate(Particle, transform.position, Quaternion.Euler(-90,0,0)) as GameObject;
             part.GetComponent<ParticleSystemRenderer>().material = materials[(int)typeBlock];
             part.transform.SetParent(GameObject.FindGameObjectWithTag("Room").transform);
+            if (GameController.MusicActive)
+            {
+                GameObject musicObj = Instantiate(music, transform.position, Quaternion.Euler(-90, 0, 0)) as GameObject;               
+                part.transform.SetParent(GameObject.FindGameObjectWithTag("Room").transform);
+            }
             GameController.Score++;
             Destroy(gameObject, 0);
         }

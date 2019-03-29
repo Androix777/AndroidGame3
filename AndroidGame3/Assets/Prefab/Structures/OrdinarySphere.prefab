@@ -115,6 +115,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: d73643dd612599744a0540f959cb7c29, type: 2}
   - {fileID: 2100000, guid: 4e9bb3f4bda42ea41a4d3ae9f5dd1fb1, type: 2}
   - {fileID: 2100000, guid: 535adba3c5db5584e9379eec6498e0d5, type: 2}
+  music: {fileID: 2600580070869157413, guid: 6ff41fbfab86a644281815818d148a3b, type: 3}
 --- !u!135 &5292952599804941029
 SphereCollider:
   m_ObjectHideFlags: 0

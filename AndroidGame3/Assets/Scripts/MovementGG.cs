@@ -7,6 +7,7 @@ public class MovementGG : MonoBehaviour {
     public bool stopGame = true;
     public GameObject ParticleDead;
     public GameObject ParticleLine;
+    public GameObject music;
     public float Force = 5, Speed = 10;
 	float startMouseX = 0, startMouseY = 0, startGGX = 0, startGGY = 0, deltaX = 0, deltaY = 0, newPosX = 0, newPosY = 0;
     public GameController gameMaster;
@@ -22,6 +23,11 @@ public class MovementGG : MonoBehaviour {
             part.transform.SetParent(GameObject.FindGameObjectWithTag("Room").transform);
             gameMaster.DeadHero();
             ParticleLine.SetActive(false);
+            if (GameController.MusicActive)
+            {
+                GameObject musicObj = Instantiate(music, transform.position, Quaternion.Euler(-90, 0, 0)) as GameObject;
+                part.transform.SetParent(GameObject.FindGameObjectWithTag("Room").transform);
+            }
             transform.position = new Vector3(1000, 1000, 1000);
         }
 
