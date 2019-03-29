@@ -8,19 +8,21 @@ using System;
 
 public class PesronData
 {   
-    public int LastRoom;
+    public int Room;
     public bool MusicActive;
 }
 
 public class GameController : MonoBehaviour
 {
-    public PesronData characterData;
+    const int MAXIMUMROOMLVL = 9;
 
-    
+    public PesronData characterData;
+    public bool TestMode;
+    int roomlvl = 0;
     public float second;
     public static bool MusicActive;
     public static int Score = 0;
-    public Text text;
+    public Text textTime;
     public int time = 0;
     public int LvlScore;
     public int block;
@@ -29,7 +31,9 @@ public class GameController : MonoBehaviour
     public GameObject Room;
     public GameObject Music;
     public Text enterRoom;
-    public GameObject menu;
+    public GameObject menuTest;
+    public GameObject menuUser;
+    public Text menuUserLvl;
     void Start()
     {
 
@@ -42,14 +46,14 @@ public class GameController : MonoBehaviour
         if (time > 0)
         {
             time--;
-            if (text != null) text.text = (int)(time / 100) + "." + time % 100;
+            if (textTime != null) textTime.text = (int)(time / 100) + "." + time % 100;
         }
         
         
 
         if (time <= 0 && !end)
         {
-            LvlScore = (int) (block / (Score + 1) * 100);
+            LvlScore = (int) (Score * 100f / block );
             EndTime();
             
         }
@@ -82,9 +86,26 @@ public class GameController : MonoBehaviour
         end = false;
         time = Room.GetComponent<Room>().GetTime();
         block = Room.GetComponent<Room>().GetBlock();
-        menu.SetActive(false);
+        Score = 0;
+        LvlScore = 0;
+        menuTest.SetActive(false);
         Hero.GetComponent<MovementGG>().StartGameHero();
         
+    }
+
+    public void StartNextLvl()
+    {
+        string room = "";
+        room = (roomlvl).ToString();
+        CreateRoom(room);
+        end = false;
+        time = Room.GetComponent<Room>().GetTime();
+        block = Room.GetComponent<Room>().GetBlock();
+        Score = 0;
+        LvlScore = 0;
+        menuUser.SetActive(false);
+        Hero.GetComponent<MovementGG>().StartGameHero();
+
     }
 
     public void DeadHero()
@@ -92,31 +113,31 @@ public class GameController : MonoBehaviour
         time = 0;
         end = true;      
         Hero.GetComponent<MovementGG>().StopGameHero();
-
+        menuUserLvl.text = "Level " + roomlvl;
         StartCoroutine(OpenMenu());
 
     }
 
     public void EndTime()
     {
-        if (Score >= (int)LvlScore * 0.95f)
+        if (LvlScore >=  95f)
         {
-
+            if (roomlvl < MAXIMUMROOMLVL) roomlvl++;
         }
-        else if (Score >= (int)LvlScore * 0.85f)
+        else if (LvlScore  >=  85f)
         {
-
+            if (roomlvl < MAXIMUMROOMLVL) roomlvl++;
         }
-        else if (Score >= (int)LvlScore * 0.75f)
+        else if (LvlScore >=  75f)
         {
-
+            if (roomlvl < MAXIMUMROOMLVL) roomlvl++;
         }
         else
         {
 
         }
         end = true;
-        
+        menuUserLvl.text = "Level " + roomlvl + " "  + Score +" " + LvlScore ;
         Hero.GetComponent<MovementGG>().StopGameHero();
         StartCoroutine(OpenMenu());
     }
@@ -124,21 +145,29 @@ public class GameController : MonoBehaviour
     IEnumerator OpenMenu()
     {
         yield return new WaitForSeconds(second);
-        menu.SetActive(true);
+        if (TestMode)
+        {
+            menuTest.SetActive(true);
+        }
+        else
+        {
+            menuUser.SetActive(true);
+        }
+        
 
     }
 
 
     static void SaveCharacter(PesronData data, int characterSlot)
     {
-        PlayerPrefs.SetInt("LastRoom" + characterSlot, data.LastRoom);
+        PlayerPrefs.SetInt("LastRoom" + characterSlot, data.Room);
         PlayerPrefs.Save();
     }
 
     static PesronData LoadCharacter(int characterSlot)
     {
         PesronData loadedCharacter = new PesronData();
-        loadedCharacter.LastRoom = PlayerPrefs.GetInt("LastRoom" + characterSlot);
+        loadedCharacter.Room = PlayerPrefs.GetInt("LastRoom" + characterSlot);
 
         return loadedCharacter;
     }
