@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\MovementGG.cs" />
     <Compile Include="Assets\Scripts\Particle.cs" />
     <Compile Include="Assets\Scripts\Room.cs" />
+    <Compile Include="Assets\Scripts\SelectSound.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/Git/Android3/AndroidGame3/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
