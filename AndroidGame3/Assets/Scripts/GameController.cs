@@ -25,7 +25,7 @@ public class GameController : MonoBehaviour
     public static bool MusicActive;
     public static int Score = 0;
     public Text textTime;
-    public int time = 0;
+    public float time = 0;
     public int LvlScore;
     public int block;
     bool end = true;
@@ -60,6 +60,7 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         Music.GetComponent<AudioSource>().mute = !MusicActive;
         if (MusicActive)
         {
@@ -72,8 +73,8 @@ public class GameController : MonoBehaviour
          
         if (time > 0 & !end)
         {
-            time--;
-            if (textTime != null) textTime.text = (int)(time / 100) + "." + time % 100;
+            time-= Time.deltaTime;
+            if (textTime != null) textTime.text = Math.Round(time,2) + "";
         }
         
         
