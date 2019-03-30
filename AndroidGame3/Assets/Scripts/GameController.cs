@@ -8,15 +8,17 @@ using System;
 
 public class PesronData
 {   
-    public int Room;
-    public bool MusicActive;
+    public int Room = 0;
+    public int MusicActive = 0;
 }
+
+
 
 public class GameController : MonoBehaviour
 {
     const int MAXIMUMROOMLVL = 9;
 
-    public PesronData characterData;
+    public PesronData characterData = new PesronData();
     public bool TestMode;
     int roomlvl = 0;
     public float second;
@@ -34,16 +36,41 @@ public class GameController : MonoBehaviour
     public GameObject menuTest;
     public GameObject menuUser;
     public Text menuUserLvl;
+    public GameObject musicOn, musicOff;
     void Start()
     {
+        
+        characterData = LoadCharacter(0);
+        roomlvl = characterData.Room;
+        if (characterData.MusicActive == 1)
+        {
+            MusicActive = true;
+            musicOn.SetActive(true);
+            musicOff.SetActive(false);
+        }
+        else
+        {
+            MusicActive = false;
+            musicOn.SetActive(false);
+            musicOff.SetActive(true);
+        }
+        if(!TestMode) LoadNextLvl();
 
     }
     // Update is called once per frame
     void Update()
     {
         Music.GetComponent<AudioSource>().mute = !MusicActive;
-
-        if (time > 0)
+        if (MusicActive)
+        {
+            characterData.MusicActive = 1;
+        }
+        else
+        {
+            characterData.MusicActive = 0;
+        }
+         
+        if (time > 0 & !end)
         {
             time--;
             if (textTime != null) textTime.text = (int)(time / 100) + "." + time % 100;
@@ -93,19 +120,22 @@ public class GameController : MonoBehaviour
         
     }
 
-    public void StartNextLvl()
+    public void LoadNextLvl()
     {
         string room = "";
         room = (roomlvl).ToString();
         CreateRoom(room);
-        end = false;
+        
         time = Room.GetComponent<Room>().GetTime();
         block = Room.GetComponent<Room>().GetBlock();
         Score = 0;
         LvlScore = 0;
-        menuUser.SetActive(false);
-        Hero.GetComponent<MovementGG>().StartGameHero();
+    }
 
+    public void StartNextLvl()
+    {
+        Hero.GetComponent<MovementGG>().StartGameHero();
+        end = false;
     }
 
     public void DeadHero()
@@ -115,7 +145,7 @@ public class GameController : MonoBehaviour
         Hero.GetComponent<MovementGG>().StopGameHero();
         menuUserLvl.text = "Level " + roomlvl;
         StartCoroutine(OpenMenu());
-
+        SaveCharacter(characterData, 0);
     }
 
     public void EndTime()
@@ -137,7 +167,9 @@ public class GameController : MonoBehaviour
 
         }
         end = true;
-        menuUserLvl.text = "Level " + roomlvl + " "  + Score +" " + LvlScore ;
+        menuUserLvl.text = "Level " + roomlvl + " "  + Score +" " + LvlScore;
+        characterData.Room = roomlvl;
+        SaveCharacter(characterData, 0);
         Hero.GetComponent<MovementGG>().StopGameHero();
         StartCoroutine(OpenMenu());
     }
@@ -161,6 +193,7 @@ public class GameController : MonoBehaviour
     static void SaveCharacter(PesronData data, int characterSlot)
     {
         PlayerPrefs.SetInt("LastRoom" + characterSlot, data.Room);
+        PlayerPrefs.SetInt("Music" + characterSlot, data.MusicActive);
         PlayerPrefs.Save();
     }
 
@@ -168,7 +201,7 @@ public class GameController : MonoBehaviour
     {
         PesronData loadedCharacter = new PesronData();
         loadedCharacter.Room = PlayerPrefs.GetInt("LastRoom" + characterSlot);
-
+        loadedCharacter.MusicActive = PlayerPrefs.GetInt("Music" + characterSlot);
         return loadedCharacter;
     }
 }
