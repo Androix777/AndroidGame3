@@ -26,7 +26,7 @@ public class GameController : MonoBehaviour
     public static int Score = 0;
     public Text textTime;
     public float time = 0;
-    public int LvlScore;
+    public float LvlScore = 0;
     public int block;
     bool end = true;
     public GameObject Hero;
@@ -37,6 +37,7 @@ public class GameController : MonoBehaviour
     public GameObject menuUser;
     public Text menuUserLvl;
     public GameObject musicOn, musicOff;
+    public GameObject progressBar,startPanel;
     void Start()
     {
         
@@ -61,6 +62,7 @@ public class GameController : MonoBehaviour
     void Update()
     {
         
+
         Music.GetComponent<AudioSource>().mute = !MusicActive;
         if (MusicActive)
         {
@@ -70,21 +72,24 @@ public class GameController : MonoBehaviour
         {
             characterData.MusicActive = 0;
         }
-         
-        if (time > 0 & !end)
-        {
-            time-= Time.deltaTime;
-            if (textTime != null) textTime.text = Math.Round(time,2) + "";
-        }
-        
-        
 
-        if (time <= 0 && !end)
+        if (time <= 0)
         {
-            LvlScore = (int) (Score * 100f / block );
             EndTime();
-            
         }
+        else
+        {
+            time -= Time.deltaTime;
+            if (!end)
+            {
+                LvlScore = (Score * 100f / block);
+                if (LvlScore > 100) { LvlScore = 100; }
+                if (textTime != null) { textTime.text = Math.Round(time, 2) + ""; }
+                progressBar.transform.GetChild(0).GetComponent<Image>().fillAmount = LvlScore / 100;
+
+            }
+        }
+
     }
 
     public bool CreateRoom(string roomName)
@@ -131,12 +136,20 @@ public class GameController : MonoBehaviour
         block = Room.GetComponent<Room>().GetBlock();
         Score = 0;
         LvlScore = 0;
+        Hero.GetComponent<MovementGG>().StartGameHero();
     }
 
     public void StartNextLvl()
     {
-        Hero.GetComponent<MovementGG>().StartGameHero();
-        end = false;
+        if (end)
+        {
+            textTime.gameObject.SetActive(true);
+            progressBar.SetActive(true);
+            startPanel.SetActive(false);
+            end = false;
+
+        }
+        
     }
 
     public void DeadHero()
@@ -146,11 +159,14 @@ public class GameController : MonoBehaviour
         Hero.GetComponent<MovementGG>().StopGameHero();
         menuUserLvl.text = "Level " + roomlvl;
         StartCoroutine(OpenMenu());
+        progressBar.SetActive(false);
+        textTime.gameObject.SetActive(false);
         SaveCharacter(characterData, 0);
     }
 
     public void EndTime()
     {
+        menuUserLvl.text = "Level " + roomlvl + " " + (int)LvlScore + "%";
         if (LvlScore >=  95f)
         {
             if (roomlvl < MAXIMUMROOMLVL) roomlvl++;
@@ -168,7 +184,8 @@ public class GameController : MonoBehaviour
 
         }
         end = true;
-        menuUserLvl.text = "Level " + roomlvl + " "  + Score +" " + LvlScore;
+        progressBar.SetActive(false);
+        textTime.gameObject.SetActive(false);       
         characterData.Room = roomlvl;
         SaveCharacter(characterData, 0);
         Hero.GetComponent<MovementGG>().StopGameHero();

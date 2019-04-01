@@ -39,6 +39,8 @@ public class MovementGG : MonoBehaviour {
         if (Input.touchCount > 0 && !stopGame)
         {
 
+            gameMaster.GetComponent<GameController>().StartNextLvl();
+
 		    if (Input.GetTouch(0).phase == TouchPhase.Began)
             {
 			    startMouseX = Input.GetTouch(0).position[0]/(Screen.height);
