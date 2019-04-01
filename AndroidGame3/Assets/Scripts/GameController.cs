@@ -43,6 +43,7 @@ public class GameController : MonoBehaviour
         
         characterData = LoadCharacter(0);
         roomlvl = characterData.Room;
+
         if (characterData.MusicActive == 1)
         {
             MusicActive = true;
@@ -72,23 +73,22 @@ public class GameController : MonoBehaviour
         {
             characterData.MusicActive = 0;
         }
-
-        if (time <= 0)
+        if (!end)
         {
-            EndTime();
-        }
-        else
-        {
-            time -= Time.deltaTime;
-            if (!end)
+            if (time <= 0)
             {
+                EndTime();
+            }
+            else
+            {
+                time -= Time.deltaTime;
                 LvlScore = (Score * 100f / block);
                 if (LvlScore > 100) { LvlScore = 100; }
                 if (textTime != null) { textTime.text = Math.Round(time, 2) + ""; }
                 progressBar.transform.GetChild(0).GetComponent<Image>().fillAmount = LvlScore / 100;
-
             }
         }
+        
 
     }
 
