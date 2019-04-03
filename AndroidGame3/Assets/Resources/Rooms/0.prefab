@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 1111838505065136016}
   - component: {fileID: 7291678143208771234}
   m_Layer: 0
-  m_Name: 3
+  m_Name: 0
   m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -155,11 +155,31 @@ PrefabInstance:
       propertyPath: typeBlock
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7908657137739182255, guid: 108332b12597bd940879d71206273c03,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 359613e5ce9e7744f92bcc495fd4ef74, type: 2}
     - target: {fileID: 7867989131049864887, guid: 108332b12597bd940879d71206273c03,
         type: 3}
       propertyPath: typeBlock
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2220728662726216522, guid: 108332b12597bd940879d71206273c03,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 359613e5ce9e7744f92bcc495fd4ef74, type: 2}
+    - target: {fileID: 1826974208743383072, guid: 108332b12597bd940879d71206273c03,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 359613e5ce9e7744f92bcc495fd4ef74, type: 2}
+    - target: {fileID: 4534000652079074734, guid: 108332b12597bd940879d71206273c03,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 359613e5ce9e7744f92bcc495fd4ef74, type: 2}
     - target: {fileID: 4475881198324921270, guid: 108332b12597bd940879d71206273c03,
         type: 3}
       propertyPath: typeBlock
