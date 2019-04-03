@@ -10,42 +10,46 @@ public class Block : MonoBehaviour {
     public GameObject music;
 	// Use this for initialization
 	void Start () {
+        gameObject.name = GameController.indexation()+"";
         SelectColor();
     }
 	
 	// Update is called once per frame
 	void Update () {
-        
-
-		if (transform.position.y < 0)
-        {          
-            Destroy(gameObject, 0);
-        }
 
 
 	}
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.tag == "ExitArea" )
+        if (collision.transform.tag == "ExitArea")
         {
-            GameObject part = Instantiate(Particle, transform.position, Quaternion.Euler(-90,0,0)) as GameObject;
-            part.GetComponent<ParticleSystemRenderer>().material = materials[(int)typeBlock];
-            part.transform.SetParent(GameObject.FindGameObjectWithTag("Room").transform);
-            if (GameController.MusicActive)
+            if (!GameController.end)
             {
-                GameObject musicObj = Instantiate(music, transform.position, Quaternion.Euler(-90, 0, 0)) as GameObject;               
+                GameObject part = Instantiate(Particle, transform.position, Quaternion.Euler(-90, 0, 0)) as GameObject;
+                part.name = gameObject.name + "0";
+                Debug.Log(gameObject.name + "dead");
+                part.GetComponent<ParticleSystemRenderer>().material = materials[(int)typeBlock];
                 part.transform.SetParent(GameObject.FindGameObjectWithTag("Room").transform);
+                if (GameController.MusicActive)
+                {
+                    GameObject musicObj = Instantiate(music, transform.position, Quaternion.Euler(-90, 0, 0)) as GameObject;
+                    part.transform.SetParent(GameObject.FindGameObjectWithTag("Room").transform);
+                }
+
+                Destroy(gameObject, 0);
             }
-            GameController.Score++;
-            Destroy(gameObject, 0);
         }
     }
 
     private void OnDestroy()
     {
+        if (!GameController.end)
+        {
+            GameController.Score++;
+        }
         
 
-        
+
     }
     public void SelectColor()
     {

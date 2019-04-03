@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class MovementGG : MonoBehaviour {
-    public bool stopGame = true;
+    public bool stopGame = false;
     public GameObject ParticleDead;
     public GameObject ParticleLine;
     public GameObject music;
@@ -16,7 +16,7 @@ public class MovementGG : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.tag == "RedBlock")
+        if (collision.transform.tag == "RedBlock" && !stopGame)
         {
             GameObject part = Instantiate(ParticleDead, transform.position, Quaternion.Euler(-90, 0, 0)) as GameObject;
             //part.GetComponent<ParticleSystemRenderer>().material = materials[(int)typeBlock];
@@ -38,8 +38,11 @@ public class MovementGG : MonoBehaviour {
 
         if (Input.touchCount > 0 && !stopGame)
         {
-
-            gameMaster.GetComponent<GameController>().StartNextLvl();
+            if (GameController.end)
+            {
+                gameMaster.GetComponent<GameController>().StartNextLvl();
+            }
+            
 
 		    if (Input.GetTouch(0).phase == TouchPhase.Began)
             {
@@ -77,6 +80,7 @@ public class MovementGG : MonoBehaviour {
 
     public void StopGameHero()
     {
+        ParticleLine.SetActive(false);
         stopGame = true;
     }
     public void StartGameHero()

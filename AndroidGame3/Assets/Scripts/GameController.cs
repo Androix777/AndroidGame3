@@ -28,7 +28,7 @@ public class GameController : MonoBehaviour
     public float time = 0;
     public float LvlScore = 0;
     public int block;
-    bool end = true;
+    public static bool end = true;
     public GameObject Hero;
     public GameObject Room;
     public GameObject Music;
@@ -38,6 +38,8 @@ public class GameController : MonoBehaviour
     public Text menuUserLvl;
     public GameObject musicOn, musicOff;
     public GameObject progressBar,startPanel;
+    public int Scorenumber = 0;
+    public int ind;
     void Start()
     {
         
@@ -62,7 +64,9 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        ind = indexBlock;
+
+        Scorenumber = Score;
 
         Music.GetComponent<AudioSource>().mute = !MusicActive;
         if (MusicActive)
@@ -82,8 +86,7 @@ public class GameController : MonoBehaviour
             else
             {
                 time -= Time.deltaTime;
-                LvlScore = (Score * 100f / block);
-                if (LvlScore > 100) { LvlScore = 100; }
+                LvlScore = (Score * 100f / block );
                 if (textTime != null) { textTime.text = Math.Round(time, 2) + ""; }
                 progressBar.transform.GetChild(0).GetComponent<Image>().fillAmount = LvlScore / 100;
             }
@@ -113,12 +116,14 @@ public class GameController : MonoBehaviour
 
     public void StartLvl()
     {
+        indexBlock = 0;
         string room ="";
         room = enterRoom.text;
         CreateRoom(room);
+
         end = false;
         time = Room.GetComponent<Room>().GetTime();
-        block = Room.GetComponent<Room>().GetBlock();
+        block = indexBlock;
         Score = 0;
         LvlScore = 0;
         menuTest.SetActive(false);
@@ -128,26 +133,29 @@ public class GameController : MonoBehaviour
 
     public void LoadNextLvl()
     {
+        indexBlock = 0;
         string room = "";
         room = (roomlvl).ToString();
         CreateRoom(room);
         
         time = Room.GetComponent<Room>().GetTime();
-        block = Room.GetComponent<Room>().GetBlock();
+        
         Score = 0;
         LvlScore = 0;
-        Hero.GetComponent<MovementGG>().StartGameHero();
+        ;
+        StartCoroutine(StartHero());
     }
 
     public void StartNextLvl()
     {
         if (end)
         {
+            Score = 0;
             textTime.gameObject.SetActive(true);
             progressBar.SetActive(true);
             startPanel.SetActive(false);
             end = false;
-
+            block = indexBlock;
         }
         
     }
@@ -166,16 +174,16 @@ public class GameController : MonoBehaviour
 
     public void EndTime()
     {
-        menuUserLvl.text = "Level " + roomlvl + " " + (int)LvlScore + "%";
-        if (LvlScore >=  95f)
+        menuUserLvl.text = "Level " + roomlvl + " " + (int)LvlScore + "%" + " " + (int)Score + " " +  (int)block + "";
+        if (LvlScore >= 95)
         {
             if (roomlvl < MAXIMUMROOMLVL) roomlvl++;
         }
-        else if (LvlScore  >=  85f)
+        else if (LvlScore  >=  85)
         {
             if (roomlvl < MAXIMUMROOMLVL) roomlvl++;
         }
-        else if (LvlScore >=  75f)
+        else if (LvlScore >= 75)
         {
             if (roomlvl < MAXIMUMROOMLVL) roomlvl++;
         }
@@ -204,9 +212,13 @@ public class GameController : MonoBehaviour
             menuUser.SetActive(true);
         }
         
-
     }
+    IEnumerator StartHero()
+    {
+        yield return new WaitForSeconds(0.1f);
 
+        Hero.GetComponent<MovementGG>().StartGameHero();
+    }
 
     static void SaveCharacter(PesronData data, int characterSlot)
     {
@@ -222,5 +234,15 @@ public class GameController : MonoBehaviour
         loadedCharacter.MusicActive = PlayerPrefs.GetInt("Music" + characterSlot);
         return loadedCharacter;
     }
+
+    static int indexBlock = 0;
+    public static int indexation()
+    {
+        indexBlock++;
+        return indexBlock;
+    }
+
+
+
 }
 
