@@ -692,7 +692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   block: 316
-  time: 100
+  time: 10
   startPos: {fileID: 2502057191152310377}
 --- !u!114 &7906830421175041097
 MonoBehaviour:
