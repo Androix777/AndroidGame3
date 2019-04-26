@@ -978,7 +978,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &478731329
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1203,7 +1203,7 @@ MonoBehaviour:
   characterData:
     Room: 0
     MusicActive: 0
-  TestMode: 0
+  TestMode: 1
   second: 2
   textTime: {fileID: 1367090212}
   time: 0

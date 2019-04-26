@@ -41,8 +41,7 @@ public class GameController : MonoBehaviour
     public int Scorenumber = 0;
     public int ind;
     void Start()
-    {
-        
+    {   
         characterData = LoadCharacter(0);
         roomlvl = characterData.Room;
 
@@ -61,7 +60,7 @@ public class GameController : MonoBehaviour
         if(!TestMode) LoadNextLvl();
 
     }
-    // Update is called once per frame
+
     void Update()
     {
         ind = indexBlock;
@@ -86,7 +85,7 @@ public class GameController : MonoBehaviour
             else
             {
                 time -= Time.deltaTime;
-                LvlScore = (Score * 100f / block );
+                LvlScore = (Score * 100f / block);
                 if (textTime != null) { textTime.text = Math.Round(time, 2) + ""; }
                 progressBar.transform.GetChild(0).GetComponent<Image>().fillAmount = LvlScore / 100;
             }

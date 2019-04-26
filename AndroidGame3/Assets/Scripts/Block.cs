@@ -12,6 +12,7 @@ public class Block : MonoBehaviour {
 	void Start () {
         gameObject.name = GameController.indexation()+"";
         SelectColor();
+        
     }
 	
 	// Update is called once per frame
