@@ -70,8 +70,8 @@
     <Compile Include="Assets\Scripts\Particle.cs" />
     <Compile Include="Assets\Scripts\Room.cs" />
     <Compile Include="Assets\Scripts\SelectSound.cs" />
-    <None Include="Assets\Resources\Blocks.txt" />
     <None Include="Assets\Resources\Patterns.txt" />
+    <None Include="Assets\Resources\Blocks.txt" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/Git/Android3/AndroidGame3/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
