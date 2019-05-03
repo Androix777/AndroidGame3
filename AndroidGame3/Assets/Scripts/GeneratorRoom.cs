@@ -55,15 +55,16 @@ public class GeneratorRoom : MonoBehaviour
     {
         if (Room != null) Destroy(Room);
         GameObject roomObj = Instantiate(RoomPref) as GameObject;
-        roomObj.transform.position = RoomPref.transform.position;
+        roomObj.transform.position = new Vector3(0 , 0.1f , 0);
+
         Room = roomObj;
         for (int i = 0; i< blocks.Length;i++)
         {
             //Debug.Log("Blocks/" + blocks[i].objBlock + " " + blocks[i].length + " " + blocks[i].width + " " + blocks[i].difficult);
             GameObject blockObj = Instantiate(Resources.Load("Blocks/" + blocks[i].objBlock)) as GameObject;
             blockObj.transform.SetParent(Room.transform);
-            Debug.Log((int)(Math.Abs(pattern[0, i] + pattern[2, i]) / 2)+" "+ 0 + " " + (int)(Math.Abs(pattern[1, i] + pattern[3, i]) / 2));
-            blockObj.transform.position = new Vector3((int)(Math.Abs(pattern[0, i] + pattern[2, i]) / 2), 0, (int)(Math.Abs(pattern[1, i] + pattern[3, i]) / 2));
+            //Debug.Log((int)(Math.Abs(pattern[0, i] + pattern[2, i]) / 2)+" "+ 0 + " " + (int)(Math.Abs(pattern[1, i] + pattern[3, i]) / 2));
+            blockObj.transform.localPosition = new Vector3((int)(Math.Abs(pattern[0, i] + pattern[2, i]) / 2 -8), 0, (int)(Math.Abs(pattern[1, i] + pattern[3, i]) / 2 - 8));
         }  
     }
 
@@ -193,7 +194,7 @@ public class GeneratorRoom : MonoBehaviour
         List<Block> blocksRet = new List<Block>();
         foreach (Block block in blocks[difficult])
         {
-            if ((block.length == length + 1 || block.length + 1 == length + 1) && (block.width == width + 1 || block.width + 1 == width + 1))
+            if ((block.length == length  || block.length + 1 == length ) && (block.width == width  || block.width + 1 == width ))
             {
                 blocksRet.Add(block);
             }
@@ -219,8 +220,8 @@ public class GeneratorRoom : MonoBehaviour
                 string[] splitLine = lines[j].Split(' ');
                 pattern[0, j] = int.Parse(splitLine[0]);
                 pattern[1, j] = int.Parse(splitLine[1]);
-                pattern[2, j] = int.Parse(splitLine[2]);
-                pattern[3, j] = int.Parse(splitLine[3]);
+                pattern[2, j] = int.Parse(splitLine[2]) + 1;
+                pattern[3, j] = int.Parse(splitLine[3]) + 1;
             }
             patterns.Add(pattern);
         }

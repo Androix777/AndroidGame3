@@ -94,34 +94,20 @@ public class GameController : MonoBehaviour
 
     }
 
-    public bool CreateRoom(string roomName)
+    public bool CreateRoom(int roomLvl)
     {
-        
-        string path = "Rooms/" + roomName;
-        if (Room != null)
-        {
-            GameObject.Destroy(Room, 0);
-        }
-        if (Resources.Load(path) != null)
-        {
-            Room = Instantiate(Resources.Load(path), Vector3.zero, Quaternion.Euler(Vector3.zero)) as GameObject;
-            Hero.transform.position = Room.GetComponent<Room>().StartPos();
-            Hero.GetComponent<Rigidbody>().velocity = Vector3.zero;
-            Hero.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-            return true;
-        }
-        else return false;
+        GetComponent<GeneratorRoom>().GenerationRoom(roomLvl);
+        Hero.transform.position = new Vector3(0,0.75f,-15);
+        return true;
     }
 
     public void StartLvl()
     {
         indexBlock = 0;
-        string room ="";
-        room = enterRoom.text;
-        CreateRoom(room);
+        CreateRoom(Convert.ToInt32(enterRoom.text));
 
         end = false;
-        time = Room.GetComponent<Room>().GetTime();
+        time = 10000;
         block = indexBlock;
         Score = 0;
         LvlScore = 0;
@@ -133,15 +119,13 @@ public class GameController : MonoBehaviour
     public void LoadNextLvl()
     {
         indexBlock = 0;
-        string room = "";
-        room = (roomlvl).ToString();
-        CreateRoom(room);
+        CreateRoom(roomlvl);
         
-        time = Room.GetComponent<Room>().GetTime();
+        time = 30;
         
         Score = 0;
         LvlScore = 0;
-        ;
+        
         StartCoroutine(StartHero());
     }
 

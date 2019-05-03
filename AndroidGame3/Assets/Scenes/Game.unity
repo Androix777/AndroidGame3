@@ -1181,6 +1181,7 @@ GameObject:
   m_Component:
   - component: {fileID: 611198485}
   - component: {fileID: 611198484}
+  - component: {fileID: 611198486}
   m_Layer: 0
   m_Name: GameMaster
   m_TagString: Untagged
@@ -1203,7 +1204,7 @@ MonoBehaviour:
   characterData:
     Room: 0
     MusicActive: 0
-  TestMode: 1
+  TestMode: 0
   second: 2
   textTime: {fileID: 1367090212}
   time: 0
@@ -1237,6 +1238,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &611198486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611198483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23724d2bde4e3494a8f7d929f4145715, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sizeX: 
+  sizeY: 
+  Room: {fileID: 0}
+  RoomPref: {fileID: 2047869848}
+  patternsText: {fileID: 4900000, guid: c23865f9fef8b714b9521589533bf038, type: 3}
+  blockText: {fileID: 4900000, guid: 6d52df2a8fcb9534fa74763891c3d95b, type: 3}
 --- !u!1 &665416587
 GameObject:
   m_ObjectHideFlags: 0
@@ -2969,11 +2988,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4327286172298044, guid: ff2999af7a2bc6740ae2ab37deb32eb1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 4327286172298044, guid: ff2999af7a2bc6740ae2ab37deb32eb1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 4327286172298044, guid: ff2999af7a2bc6740ae2ab37deb32eb1, type: 3}
       propertyPath: m_LocalRotation.x
@@ -3208,6 +3227,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2047869848
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2047869849}
+  m_Layer: 0
+  m_Name: Room
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2047869849
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047869848}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2087203796
 GameObject:
