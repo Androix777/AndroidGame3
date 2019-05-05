@@ -31,7 +31,7 @@ public class GeneratorRoom : MonoBehaviour
     public TextAsset blockText;
     List<Block>[] blocks = new List<Block>[11];
     int[] Distribution = new int[] { 5, 15, 60, 15, 5 };
-    private void Start()
+    private void Awake()
     {
 
         loadPatterns();
@@ -41,11 +41,10 @@ public class GeneratorRoom : MonoBehaviour
 
     public void GenerationRoom(int LvlRoom)
     {
-        int difficult = difficultF(LvlRoom);
-        int[,] pattern = generationPattern(difficult);
-        //Debug.Log(pattern.Length);
-        int[] difficultBlocks = generationDifficultBlocks(pattern,difficult);
-        //Debug.Log(pattern.Length);
+        
+        int difficult = difficultF(LvlRoom);        
+        int[,] pattern = generationPattern(difficult);        
+        int[] difficultBlocks = generationDifficultBlocks(pattern,difficult);        
         Block[] blocks = generationBlocks(difficultBlocks, pattern);       
         CreateRoom(blocks,pattern);
 
@@ -56,7 +55,7 @@ public class GeneratorRoom : MonoBehaviour
         if (Room != null) Destroy(Room);
         GameObject roomObj = Instantiate(RoomPref) as GameObject;
         roomObj.transform.position = new Vector3(0 , 0.1f , 0);
-
+        roomObj.tag = "Room";
         Room = roomObj;
         for (int i = 0; i< blocks.Length;i++)
         {
@@ -83,8 +82,10 @@ public class GeneratorRoom : MonoBehaviour
 
     public Block[] generationBlocks(int[] difficultsBlock,int[,] pattern)
     {
+        
+        
         Block[] blockRoom = new Block[difficultsBlock.Length];
-
+        
         for (int i = 0;i < difficultsBlock.Length;i++)
         {
             int diff = difficultsBlock[i];
@@ -94,7 +95,7 @@ public class GeneratorRoom : MonoBehaviour
             else diffMax = diff + 2;
             if (diff - 2 < 0) diffMin = 0;
             else diffMin = diff - 2;
-
+            
             int[] sizeBlock = new int[] { Math.Abs(pattern[0, i] - pattern[2, i]), Math.Abs(pattern[1, i] - pattern[3, i]) };
 
             List<Block[]> listarraysBlocks = new List<Block[]>();
@@ -107,14 +108,14 @@ public class GeneratorRoom : MonoBehaviour
                 summBlocks += AddingBlock.Length;
             }
 
-            if (summBlocks == 0)
+            /*if (summBlocks == 0)
             {
                 Debug.Log("Zero " + sizeBlock[1] + " " + sizeBlock[0] + " " + diff);
             }
             for (int j = 0; j <= diffMax - diffMin; j++)
             {
                 Debug.Log("Block " + sizeBlock[1] + " " + sizeBlock[0] + " " + listarraysBlocks[j].Length + " " +j);
-            }
+            }*/
 
             float[] percentBlocks = new float[5];
             float summDistributionBlocks = 0;
@@ -133,7 +134,7 @@ public class GeneratorRoom : MonoBehaviour
                 else percentBlocks[j] = 0;
                 //Debug.Log((listarraysBlocks[j].Length / summBlocks * 100f * dist) + " " + listarraysBlocks[j].Length / summBlocks);
                 summDistributionBlocks += percentBlocks[j];
-                Debug.Log("PercentBlocks " + percentBlocks[j]);
+                //Debug.Log("PercentBlocks " + percentBlocks[j]);
             }
             
             float[] chance = new float[5];
@@ -141,7 +142,7 @@ public class GeneratorRoom : MonoBehaviour
             {
                 
                 chance[j] = percentBlocks[j] / (summDistributionBlocks + 1f) * 100f;
-                Debug.Log("Chance " +chance[j]);
+                
             }
 
             
@@ -150,7 +151,7 @@ public class GeneratorRoom : MonoBehaviour
             {
                 
                 
-                Debug.Log(rand + " " + chance[j]);
+                
                 rand -= (int)Math.Ceiling(chance[j]);
                 
                 if ((int)rand <= 0 || j == diffMax - diffMin)

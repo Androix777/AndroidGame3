@@ -80,12 +80,13 @@ public class MovementGG : MonoBehaviour {
 
     public void StopGameHero()
     {
-        ParticleLine.SetActive(false);
+        ParticleLine.SetActive(false);        
         stopGame = true;
     }
     public void StartGameHero()
     {
         ParticleLine.SetActive(true);
+        gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
         stopGame = false;
     }
     void FixedUpdate () {

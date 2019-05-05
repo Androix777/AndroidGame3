@@ -16,8 +16,6 @@ public class PesronData
 
 public class GameController : MonoBehaviour
 {
-    const int MAXIMUMROOMLVL = 9;
-
     public PesronData characterData = new PesronData();
     public bool TestMode;
     int roomlvl = 0;
@@ -43,6 +41,7 @@ public class GameController : MonoBehaviour
     void Start()
     {   
         characterData = LoadCharacter(0);
+
         roomlvl = characterData.Room;
 
         if (characterData.MusicActive == 1)
@@ -50,15 +49,17 @@ public class GameController : MonoBehaviour
             MusicActive = true;
             musicOn.SetActive(true);
             musicOff.SetActive(false);
+            Debug.Log("Error 2");
         }
         else
         {
             MusicActive = false;
             musicOn.SetActive(false);
             musicOff.SetActive(true);
+
         }
         if(!TestMode) LoadNextLvl();
-
+        
     }
 
     void Update()
@@ -88,6 +89,10 @@ public class GameController : MonoBehaviour
                 LvlScore = (Score * 100f / block);
                 if (textTime != null) { textTime.text = Math.Round(time, 2) + ""; }
                 progressBar.transform.GetChild(0).GetComponent<Image>().fillAmount = LvlScore / 100;
+                if (LvlScore >= 100)
+                {
+                    EndTime();
+                }
             }
         }
         
@@ -119,6 +124,7 @@ public class GameController : MonoBehaviour
     public void LoadNextLvl()
     {
         indexBlock = 0;
+       
         CreateRoom(roomlvl);
         
         time = 30;
@@ -158,17 +164,9 @@ public class GameController : MonoBehaviour
     public void EndTime()
     {
         menuUserLvl.text = "Level " + roomlvl + " " + (int)LvlScore + "%" + " " + (int)Score + " " +  (int)block + "";
-        if (LvlScore >= 95)
+        if (LvlScore >= 75)
         {
-            if (roomlvl < MAXIMUMROOMLVL) roomlvl++;
-        }
-        else if (LvlScore  >=  85)
-        {
-            if (roomlvl < MAXIMUMROOMLVL) roomlvl++;
-        }
-        else if (LvlScore >= 75)
-        {
-            if (roomlvl < MAXIMUMROOMLVL) roomlvl++;
+            roomlvl++;
         }
         else
         {
