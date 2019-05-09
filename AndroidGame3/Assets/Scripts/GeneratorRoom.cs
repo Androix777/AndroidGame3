@@ -31,6 +31,9 @@ public class GeneratorRoom : MonoBehaviour
     public TextAsset blockText;
     List<Block>[] blocks = new List<Block>[11];
     int[] Distribution = new int[] { 5, 15, 60, 15, 5 };
+
+    int[,] Generpattern;
+    Block[] Generblocks;
     private void Awake()
     {
 
@@ -43,13 +46,16 @@ public class GeneratorRoom : MonoBehaviour
     {
         
         int difficult = difficultF(LvlRoom);        
-        int[,] pattern = generationPattern(difficult);        
-        int[] difficultBlocks = generationDifficultBlocks(pattern,difficult);        
-        Block[] blocks = generationBlocks(difficultBlocks, pattern);       
-        CreateRoom(blocks,pattern);
+        Generpattern = generationPattern(difficult);        
+        int[] difficultBlocks = generationDifficultBlocks(Generpattern, difficult);        
+        Generblocks = generationBlocks(difficultBlocks, Generpattern);       
+        CreateRoom(Generblocks, Generpattern);
 
     }
-
+    public void LoadLastRoom()
+    {
+        CreateRoom(Generblocks, Generpattern);
+    }
     public void CreateRoom(Block[] blocks,int[,] pattern)
     {
         if (Room != null) Destroy(Room);
@@ -255,4 +261,27 @@ public class GeneratorRoom : MonoBehaviour
         //Debug.Log("");
     }
 
+    /*static void SaveRoom(Block[] data,int[] pattern, int characterSlot)
+    {
+        for
+
+        PlayerPrefs.SetInt("LastRoom" + characterSlot, data.Room);
+        PlayerPrefs.SetInt("Music" + characterSlot, data.MusicActive);
+        PlayerPrefs.Save();
+    }
+
+    static PesronData LoadBlocks(int characterSlot)
+    {
+        PesronData loadedCharacter = new PesronData();
+        loadedCharacter.Room = PlayerPrefs.GetInt("LastRoom" + characterSlot);
+        loadedCharacter.MusicActive = PlayerPrefs.GetInt("Music" + characterSlot);
+        return loadedCharacter;
+    }
+    static PesronData LoadPattern(int characterSlot)
+    {
+        PesronData loadedCharacter = new PesronData();
+        loadedCharacter.Room = PlayerPrefs.GetInt("LastRoom" + characterSlot);
+        loadedCharacter.MusicActive = PlayerPrefs.GetInt("Music" + characterSlot);
+        return loadedCharacter;
+    }*/
 }
