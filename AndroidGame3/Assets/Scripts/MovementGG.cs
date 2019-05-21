@@ -41,6 +41,10 @@ public class MovementGG : MonoBehaviour {
             if (GameController.end)
             {
                 gameMaster.GetComponent<GameController>().StartNextLvl();
+                startMouseX = Input.GetTouch(0).position[0] / (Screen.height);
+                startMouseY = Input.GetTouch(0).position[1] / (Screen.height);
+                startGGX = gameObject.transform.position[0];
+                startGGY = gameObject.transform.position[2];
             }
             
 

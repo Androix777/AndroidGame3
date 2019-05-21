@@ -34,6 +34,7 @@ public class GameController : MonoBehaviour
     public GameObject menuTest;
     public GameObject menuUser;
     public Text menuUserLvl;
+    public Text menuUserLvlResult;
     public GameObject musicOn, musicOff;
     public GameObject progressBar,startPanel;
     public int Scorenumber = 0;
@@ -165,6 +166,7 @@ public class GameController : MonoBehaviour
         end = true;      
         Hero.GetComponent<MovementGG>().StopGameHero();
         menuUserLvl.text = "Level " + roomlvl;
+        menuUserLvlResult.text = "Lose";
         StartCoroutine(OpenMenu());
         progressBar.SetActive(false);
         textTime.gameObject.SetActive(false);
@@ -173,14 +175,16 @@ public class GameController : MonoBehaviour
 
     public void EndTime()
     {
-        menuUserLvl.text = "Level " + roomlvl + " " + (int)LvlScore + "%" + " " + (int)Score + " " +  (int)block + "";
-        if (LvlScore >= 75)
+        menuUserLvl.text = "Level " + roomlvl;
+        if (LvlScore >= 85)
         {
             roomlvl++;
+            menuUserLvlResult.text = "Win";
             winLastRoom = true;
         }
         else
         {
+            menuUserLvlResult.text = "Lose";
             winLastRoom = false;
         }
         end = true;
