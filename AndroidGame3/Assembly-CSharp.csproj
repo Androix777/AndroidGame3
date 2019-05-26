@@ -81,12 +81,6 @@
     <Reference Include="Unity.CollabProxy.Editor">
       <HintPath>D:/Git/Android3/AndroidGame3/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Editor">
-      <HintPath>D:/Git/Android3/AndroidGame3/Library/ScriptAssemblies/Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="XiaomiSupport">
-      <HintPath>D:/Git/Android3/AndroidGame3/Library/ScriptAssemblies/XiaomiSupport.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>D:/Git/Android3/AndroidGame3/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
@@ -299,12 +293,6 @@
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
       <HintPath>D:/Git/Android3/AndroidGame3/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
-    </Reference>
-    <Reference Include="ChannelPurchase">
-      <HintPath>D:/Git/Android3/AndroidGame3/Library/PackageCache/com.unity.xiaomi@1.0.3/ChannelPurchase.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityStore">
-      <HintPath>D:/Git/Android3/AndroidGame3/Library/PackageCache/com.unity.xiaomi@1.0.3/UnityStore.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>D:/Unity Version/2018.3.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unity/mscorlib.dll</HintPath>
